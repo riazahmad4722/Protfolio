@@ -3,9 +3,10 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="theme-color" content="#0d0f12" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Freelancer - Start Bootstrap Theme</title>
+        <title>Riaz Ahmad - Unity Game Developer</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
@@ -15,12 +16,95 @@
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
-    </head>
+    
+<!-- Custom dark + blue theme overrides -->
+<style>
+:root{
+  --bg:#0d0f12;
+  --card:#111214;
+  --muted:#9aa6b2;
+  --accent:#38a8ff;
+  --accent-2:#2b86d6;
+}
+body{
+  background:var(--bg);
+  color:#dbe9fb;
+}
+.navbar{
+  background:transparent !important;
+  backdrop-filter: blur(6px);
+  border-bottom:1px solid rgba(255,255,255,0.03);
+}
+.masthead{
+  padding-top:8rem;
+  padding-bottom:6rem;
+  background:linear-gradient(180deg, rgba(8,12,16,0.8), rgba(6,8,12,0.95));
+}
+.masthead-avatar{
+  filter: drop-shadow(0 8px 24px rgba(0,0,0,0.7));
+  border:3px solid rgba(56,168,255,0.12);
+}
+.page-section{
+  padding-top:6rem;
+  padding-bottom:6rem;
+}
+.page-section.bg-primary{
+  background:linear-gradient(180deg, rgba(5,7,10,1), rgba(10,12,16,1));
+}
+.text-secondary{ color:var(--muted) !important; }
+.btn-primary{
+  background:linear-gradient(90deg,var(--accent),var(--accent-2));
+  border:none;
+  box-shadow:0 6px 18px rgba(43,134,214,0.12);
+}
+.btn-outline-light{
+  color:var(--accent);
+  border-color:rgba(56,168,255,0.16);
+}
+.footer, .copyright{ background:transparent; }
+.lead{ color: #c8d9ef; }
+
+/* subtle animations (base) */
+.fade-in-up{
+  opacity:0;
+  transform:translateY(16px);
+  animation:fadeInUp 0.9s forwards;
+}
+@keyframes fadeInUp{
+  to{ opacity:1; transform:translateY(0); }
+}
+
+/* portfolio item hover glow */
+.portfolio-item:hover{
+  transform:translateY(-6px) scale(1.02);
+  transition: transform 260ms ease;
+  box-shadow:0 12px 30px rgba(56,168,255,0.08);
+}
+.portfolio-item img{ border-radius:6px; }
+
+/* subtle divider icon color */
+.divider-custom-icon i{ color:var(--accent); }
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+  // add fade-in-up to main elements
+  var h = document.querySelector(".masthead-heading");
+  var s = document.querySelector(".masthead-subheading");
+  var items = document.querySelectorAll(".portfolio-item");
+  if(h){ h.classList.add("fade-in-up"); }
+  if(s){ setTimeout(()=>s.classList.add("fade-in-up"), 160); }
+  items.forEach((it, i)=>{
+    setTimeout(()=>it.classList.add("fade-in-up"), 260 + i*120);
+  });
+});
+</script>
+</head>
     <body id="page-top">
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand" href="#page-top">Start Bootstrap</a>
+                <a class="navbar-brand" href="#page-top">Riaz Ahmad</a>
                 <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars"></i>
@@ -40,7 +124,7 @@
                 <!-- Masthead Avatar Image-->
                 <img class="masthead-avatar mb-5" src="assets/img/avataaars.svg" alt="..." />
                 <!-- Masthead Heading-->
-                <h1 class="masthead-heading text-uppercase mb-0">Start Bootstrap</h1>
+                <h1 class="masthead-heading text-uppercase mb-0">Riaz Ahmad</h1>
                 <!-- Icon Divider-->
                 <div class="divider-custom divider-light">
                     <div class="divider-custom-line"></div>
@@ -48,7 +132,7 @@
                     <div class="divider-custom-line"></div>
                 </div>
                 <!-- Masthead Subheading-->
-                <p class="masthead-subheading font-weight-light mb-0">Graphic Artist - Web Designer - Illustrator</p>
+                <p class="masthead-subheading font-weight-light mb-0">Unity Game Developer</p>
             </div>
         </header>
         <!-- Portfolio Section-->
@@ -70,7 +154,7 @@
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="assets/img/portfolio/cabin.png" alt="..." />
+                            <img class="img-fluid" src="assets/img/portfolio/cabin.png" alt="Ball Sort" />
                         </div>
                     </div>
                     <!-- Portfolio Item 2-->
@@ -79,7 +163,7 @@
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="assets/img/portfolio/cake.png" alt="..." />
+                            <img class="img-fluid" src="assets/img/portfolio/cake.png" alt="Stack Man Hide and Seek" />
                         </div>
                     </div>
                     <!-- Portfolio Item 3-->
@@ -88,7 +172,7 @@
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="assets/img/portfolio/circus.png" alt="..." />
+                            <img class="img-fluid" src="assets/img/portfolio/circus.png" alt="FBS Shooting Game" />
                         </div>
                     </div>
                     <!-- Portfolio Item 4-->
@@ -97,7 +181,7 @@
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="assets/img/portfolio/game.png" alt="..." />
+                            <img class="img-fluid" src="assets/img/portfolio/game.png" alt="War of Guards" />
                         </div>
                     </div>
                     <!-- Portfolio Item 5-->
@@ -106,7 +190,7 @@
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="assets/img/portfolio/safe.png" alt="..." />
+                            <img class="img-fluid" src="assets/img/portfolio/safe.png" alt="Going Rolling Ball" />
                         </div>
                     </div>
                     <!-- Portfolio Item 6-->
@@ -115,7 +199,7 @@
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="assets/img/portfolio/submarine.png" alt="..." />
+                            <img class="img-fluid" src="assets/img/portfolio/submarine.png" alt="Coming Soon" />
                         </div>
                     </div>
                 </div>
@@ -134,8 +218,8 @@
                 </div>
                 <!-- About Section Content-->
                 <div class="row">
-                    <div class="col-lg-4 ms-auto"><p class="lead">Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional SASS stylesheets for easy customization.</p></div>
-                    <div class="col-lg-4 me-auto"><p class="lead">You can create your own custom avatar for the masthead, change the icon in the dividers, and add your email address to the contact form to make it fully functional!</p></div>
+                    <div class="col-lg-4 ms-auto"><p class="lead">Senior Unity Game Developer with 7+ years of experience creating engaging mobile and PC games. Passionate about gameplay systems, optimization, and fun-first design.</p></div>
+                    <div class="col-lg-4 me-auto"><p class="lead">Skilled in C#, Unity, multiplayer basics, and performance tuning. I build polished prototypes and production-ready game experiences.</p></div>
                 </div>
                 <!-- About Section Button-->
                 <div class="text-center mt-4">
@@ -167,52 +251,15 @@
                         <!-- To make this form functional, sign up at-->
                         <!-- https://startbootstrap.com/solution/contact-forms-->
                         <!-- to get an API token!-->
-                        <form id="contactForm" data-sb-form-api-token="API_TOKEN">
-                            <!-- Name input-->
-                            <div class="form-floating mb-3">
-                                <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
-                                <label for="name">Full name</label>
-                                <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
-                            </div>
-                            <!-- Email address input-->
-                            <div class="form-floating mb-3">
-                                <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
-                                <label for="email">Email address</label>
-                                <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
-                                <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
-                            </div>
-                            <!-- Phone number input-->
-                            <div class="form-floating mb-3">
-                                <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
-                                <label for="phone">Phone number</label>
-                                <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
-                            </div>
-                            <!-- Message input-->
-                            <div class="form-floating mb-3">
-                                <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
-                                <label for="message">Message</label>
-                                <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
-                            </div>
-                            <!-- Submit success message-->
-                            <!---->
-                            <!-- This is what your users will see when the form-->
-                            <!-- has successfully submitted-->
-                            <div class="d-none" id="submitSuccessMessage">
-                                <div class="text-center mb-3">
-                                    <div class="fw-bolder">Form submission successful!</div>
-                                    To activate this form, sign up at
-                                    <br />
-                                    <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
-                                </div>
-                            </div>
-                            <!-- Submit error message-->
-                            <!---->
-                            <!-- This is what your users will see when there is-->
-                            <!-- an error submitting the form-->
-                            <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
-                            <!-- Submit Button-->
-                            <button class="btn btn-primary btn-xl disabled" id="submitButton" type="submit">Send</button>
-                        </form>
+                        
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 col-xl-7 text-center">
+                        <p class="lead mb-4">Interested in working together? Send me an email or download my resume.</p>
+                        <a class="btn btn-primary btn-xl me-3" href="mailto:riaz4722@gmail.com">Email Me</a>
+                        <a class="btn btn-outline-light btn-xl" href="assets/RiazAhmad_CV.pdf" download>Download Resume</a>
+                    </div>
+                </div>
+
                     </div>
                 </div>
             </div>
@@ -233,7 +280,7 @@
                     <!-- Footer Social Icons-->
                     <div class="col-lg-4 mb-5 mb-lg-0">
                         <h4 class="text-uppercase mb-4">Around the Web</h4>
-                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="https://www.linkedin.com/in/riaz-ahmad-8176b013a/" target="_blank" title="LinkedIn"><i class="fab fa-fw fa-linkedin-in"></i></a>
                         <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-twitter"></i></a>
                         <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-linkedin-in"></i></a>
                         <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-dribbble"></i></a>
@@ -242,9 +289,7 @@
                     <div class="col-lg-4">
                         <h4 class="text-uppercase mb-4">About Freelancer</h4>
                         <p class="lead mb-0">
-                            Freelance is a free to use, MIT licensed Bootstrap theme created by
-                            <a href="http://startbootstrap.com">Start Bootstrap</a>
-                            .
+                            Portfolio by Riaz Ahmad — Unity Game Developer.
                         </p>
                     </div>
                 </div>
@@ -252,7 +297,7 @@
         </footer>
         <!-- Copyright Section-->
         <div class="copyright py-4 text-center text-white">
-            <div class="container"><small>Copyright &copy; Your Website 2023</small></div>
+            <div class="container"><small>Copyright &copy; Riaz Ahmad 2025</small></div>
         </div>
         <!-- Portfolio Modals-->
         <!-- Portfolio Modal 1-->
@@ -265,7 +310,7 @@
                             <div class="row justify-content-center">
                                 <div class="col-lg-8">
                                     <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Log Cabin</h2>
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Coming Soon</h2>
                                     <!-- Icon Divider-->
                                     <div class="divider-custom">
                                         <div class="divider-custom-line"></div>
@@ -273,9 +318,9 @@
                                         <div class="divider-custom-line"></div>
                                     </div>
                                     <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/cabin.png" alt="..." />
+                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/submarine.png" alt="..." />
                                     <!-- Portfolio Modal - Text-->
-                                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+                                    <p class="mb-4">A new project in development — stay tuned!</p>
                                     <button class="btn btn-primary" data-bs-dismiss="modal">
                                         <i class="fas fa-xmark fa-fw"></i>
                                         Close Window
