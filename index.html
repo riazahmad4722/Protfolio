@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-<meta name="theme-color" content="#0d0f12" />
+<meta name="theme-color" content="#07080a" />
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Riaz Ahmad - Unity Game Developer</title>
@@ -17,86 +17,65 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
     
-<!-- Custom dark + blue theme overrides -->
+<!-- Custom dark + blue theme + bouncy animations -->
 <style>
 :root{
-  --bg:#0d0f12;
-  --card:#111214;
+  --bg:#07080a;
+  --card:#0f1113;
   --muted:#9aa6b2;
-  --accent:#38a8ff;
-  --accent-2:#2b86d6;
+  --accent:#2ee6ff;
+  --accent-2:#1e90ff;
 }
-body{
-  background:var(--bg);
-  color:#dbe9fb;
-}
-.navbar{
-  background:transparent !important;
-  backdrop-filter: blur(6px);
-  border-bottom:1px solid rgba(255,255,255,0.03);
-}
-.masthead{
-  padding-top:8rem;
-  padding-bottom:6rem;
-  background:linear-gradient(180deg, rgba(8,12,16,0.8), rgba(6,8,12,0.95));
-}
-.masthead-avatar{
-  filter: drop-shadow(0 8px 24px rgba(0,0,0,0.7));
-  border:3px solid rgba(56,168,255,0.12);
-}
-.page-section{
-  padding-top:6rem;
-  padding-bottom:6rem;
-}
-.page-section.bg-primary{
-  background:linear-gradient(180deg, rgba(5,7,10,1), rgba(10,12,16,1));
-}
+body{ background:var(--bg); color:#e6f6ff; }
+.navbar{ background:transparent !important; border-bottom:1px solid rgba(255,255,255,0.03); }
+.masthead{ padding-top:8rem; padding-bottom:6rem; background:linear-gradient(180deg,#07080a,#0b0d10); }
+.masthead-avatar{ filter: drop-shadow(0 12px 32px rgba(0,0,0,0.7)); border:3px solid rgba(46,230,255,0.14); transform:translateZ(0); }
+.page-section{ padding-top:6rem; padding-bottom:6rem; }
 .text-secondary{ color:var(--muted) !important; }
-.btn-primary{
-  background:linear-gradient(90deg,var(--accent),var(--accent-2));
-  border:none;
-  box-shadow:0 6px 18px rgba(43,134,214,0.12);
-}
-.btn-outline-light{
-  color:var(--accent);
-  border-color:rgba(56,168,255,0.16);
-}
-.footer, .copyright{ background:transparent; }
-.lead{ color: #c8d9ef; }
+.btn-primary{ background:linear-gradient(90deg,var(--accent),var(--accent-2)); border:none; box-shadow:0 10px 30px rgba(30,144,255,0.12); }
+.btn-outline-light{ color:var(--accent); border-color:rgba(46,230,255,0.12); }
+.lead{ color:#d8efff; }
 
-/* subtle animations (base) */
-.fade-in-up{
+/* stronger animated entrance */
+.pop-in{
   opacity:0;
-  transform:translateY(16px);
-  animation:fadeInUp 0.9s forwards;
+  transform:scale(0.9) translateY(10px);
+  animation:popIn 0.7s cubic-bezier(.2,.9,.3,1) forwards;
 }
-@keyframes fadeInUp{
-  to{ opacity:1; transform:translateY(0); }
+@keyframes popIn{
+  to{ opacity:1; transform:scale(1) translateY(0); }
 }
+/* bounce hover for portfolio items */
+.portfolio-item{
+  transition: transform 300ms cubic-bezier(.2,.9,.3,1);
+}
+.portfolio-item:hover{ transform:translateY(-8px) scale(1.05) rotate(-0.5deg); box-shadow:0 18px 40px rgba(30,144,255,0.12); }
 
-/* portfolio item hover glow */
-.portfolio-item:hover{
-  transform:translateY(-6px) scale(1.02);
-  transition: transform 260ms ease;
-  box-shadow:0 12px 30px rgba(56,168,255,0.08);
-}
-.portfolio-item img{ border-radius:6px; }
+/* flashy icon */
+.divider-custom-icon i{ color:var(--accent); transform:translateZ(0); }
 
-/* subtle divider icon color */
-.divider-custom-icon i{ color:var(--accent); }
+/* floating pulse for CTA */
+@keyframes pulse {
+  0%{ box-shadow:0 0 0 0 rgba(46,230,255,0.18); }
+  70%{ box-shadow:0 0 0 10px rgba(46,230,255,0); }
+  100%{ box-shadow:0 0 0 0 rgba(46,230,255,0); }
+}
+.btn-primary.pulse{ animation: pulse 2.4s infinite; }
 </style>
 
 <script>
 document.addEventListener("DOMContentLoaded", function(){
-  // add fade-in-up to main elements
   var h = document.querySelector(".masthead-heading");
   var s = document.querySelector(".masthead-subheading");
   var items = document.querySelectorAll(".portfolio-item");
-  if(h){ h.classList.add("fade-in-up"); }
-  if(s){ setTimeout(()=>s.classList.add("fade-in-up"), 160); }
+  if(h){ h.classList.add("pop-in"); }
+  if(s){ setTimeout(()=>s.classList.add("pop-in"), 120); }
   items.forEach((it, i)=>{
-    setTimeout(()=>it.classList.add("fade-in-up"), 260 + i*120);
+    setTimeout(()=>it.classList.add("pop-in"), 260 + i*140);
   });
+  // add pulse to primary CTA
+  var cta = document.querySelector(".btn-primary");
+  if(cta){ cta.classList.add("pulse"); }
 });
 </script>
 </head>
