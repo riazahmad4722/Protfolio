@@ -115,7 +115,6 @@
             transition: 0.3s;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
         }
         .projects .project:hover {
             transform: translateY(-5px);
@@ -204,7 +203,8 @@
                 transform: translateY(0);
             }
         }
-        /* Mobile-friendly text width fixes */
+
+        /* ---------- MOBILE TEXT FIXES ---------- */
         .hero p,
         .about-text {
             max-width: 90%;
@@ -228,13 +228,78 @@
                 font-size: 1rem;
             }
         }
+
+        /* ---------- VIDEO IFRAME ---------- */
         .preview-container iframe {
             width: 100%;
             height: 220px;
             border: none;
             border-radius: 20px;
             overflow: hidden;
-            pointer-events: none; /* prevents clicking on video */
+            pointer-events: none;
+        }
+
+        /* ========================================= */
+        /* ========== LANDSCAPE PROJECT ============ */
+        /* ========================================= */
+
+        .project.landscape {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* ========================================= */
+        /* ============ PORTRAIT PROJECT =========== */
+        /* ========================================= */
+
+        /* Full width card for portrait */
+        .projects .project.portrait {
+            grid-column: 1 / -1;
+            display: flex;
+            flex-direction: row;
+            gap: 15px;
+            align-items: flex-start;
+        }
+
+        /* Video on left */
+        .project.portrait .preview-container {
+            flex: 0 0 40%;
+        }
+
+        /* Video size fix */
+        .project.portrait .preview-container video {
+            width: auto;
+            height: 240px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        /* Text on right */
+        .project.portrait .project-info {
+            flex: 1;
+        }
+
+        /* Mobile: stack vertically */
+        @media (max-width: 600px) {
+            .projects .project.portrait {
+                flex-direction: column;
+            }
+
+            .project.portrait .preview-container video {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        .project-info ul {
+            list-style-type: disc; /* or circle/square */
+            padding-left: 20px;    /* controls indentation */
+            margin-top: 5px;      /* optional spacing above the list */
+            margin-bottom: 5px;      /* optional spacing above the list */
+        }
+
+        .project-info ul li {
+            margin-bottom: 1px;    /* optional spacing between items */
         }
 
     </style>
@@ -243,10 +308,10 @@
 <button class="toggle-theme" id="themeBtn">Toggle Theme</button>
 <header>
     <h1>Riaz Ahmad</h1>
-    <p class="subtitle">Unity Game Developer | Mobile & PC | Gameplay Systems & Optimization
+    <p class="subtitle">Unity Game Developer | Mobile & PC | Gameplay Systems & Optimization</p>
     <p class="about-text" style="margin-top:15px;">
         I am a Unity developer with 7+ years of experience, having worked on engaging and high-quality projects. I am passionate about learning, improving systems, and delivering polished gameplay experiences.
-    </p></p>
+    </p>
     <a href="#contact" class="btn">Hire Me</a>
     <a href="mailto:riaz4722@gmail.com" class="btn">Email Me</a>
 </header>
@@ -257,71 +322,108 @@
 </section>
 
 <section class="projects" >
-    <div class="project">
+
+    <div class="project portrait">
         <div class="preview-container">
-            <video autoplay loop muted playsinline poster="https://cdn.pixabay.com/photo/2017/09/04/18/51/fight-2710113_1280.jpg">
+            <video autoplay loop muted playsinline>
                 <source src="assets/videos/Criticl_Strike_Back.mp4" type="video/mp4">
             </video>
         </div>
-        <h3>Critical Strike Back</h3>
-        <p>Realistic car parking simulator with responsive controls and dynamic camera system.</p>
-        <p><strong>Platform:</strong> Android / Unity</p>
-        <div class="project-tags">
-            <span>Unity</span><span>Simulation</span><span>Level Design</span>
+
+        <div class="project-info">
+            <h3>Critical Strike Back</h3>
+            <p>Critical Strike Back is a fast-paced and immersive first-person shooter, built with a strong focus on realism, smooth controls, and intelligent gameplay systems.</p>
+
+            <ul>
+                <li>Advanced Tactical Enemy AI</li>
+                <li>Dynamic Camera Actions & Cinematic Cutscenes</li>
+                <li>Campaign mode</li>
+                <li>Zombie Survival Mode</li>
+            </ul>
+
+
+            <div class="project-tags">
+                <span>Action</span><span>FPS</span>
+            </div>
         </div>
     </div>
-    <div class="project">
+    
+    <div class="project portrait">
         <div class="preview-container">
-            <video autoplay loop muted playsinline poster="https://cdn.pixabay.com/photo/2017/09/04/18/51/fight-2710113_1280.jpg">
-                <source src="assets/videos/ball_sort.mp4" type="video/mp4">
-            </video>
-        </div>
-        <h3>Ball Sort</h3>
-        <p>Realistic car parking simulator with responsive controls and dynamic camera system.</p>
-        <p><strong>Platform:</strong> Android / Unity</p>
-        <div class="project-tags">
-            <span>Unity</span><span>Simulation</span><span>Level Design</span>
-        </div>
-    </div>
-    <div class="project">
-        <div class="preview-container">
-            <video autoplay loop muted playsinline poster="https://cdn.pixabay.com/photo/2017/09/04/18/51/fight-2710113_1280.jpg">
+            <video autoplay loop muted playsinline>
                 <source src="assets/videos/War_Of_Gurds.mp4" type="video/mp4">
             </video>
         </div>
-        <h3>War of Guards</h3>
-        <p>Number puzzle brain game with engaging sorting mechanics and smooth UI.</p>
-        <p><strong>Platform:</strong> Android / Unity</p>
-        <div class="project-tags">
-            <span>Unity</span><span>Puzzle</span>
+
+        <div class="project-info">
+            <h3>War Of Guards</h3>
+            <p>War of Guards is an action-packed tower defense game where you protect your castle from relentless waves of enemies, strategically upgrade your soldiers’ health and damage, and unleash powerful abilities to overcome each challenging wave.</p>
+
+            <p><strong>Platform:</strong> Android / Unity</p>
+
+            <div class="project-tags">
+                <span>Strategy</span>
+            </div>
         </div>
     </div>
-    <div class="project">
-        <div class="preview-container">
-            <video autoplay loop muted playsinline poster="https://cdn.pixabay.com/photo/2017/09/04/18/51/fight-2710113_1280.jpg">
-                <source src="assets/videos/Stick_Man.mp4" type="video/mp4">
+    
+    <div class="project landscape">
+        <div class="preview-container landscape-video">
+            <video autoplay loop muted playsinline>
+                <source src="assets/videos/ball_sort.mp4" type="video/mp4">
             </video>
         </div>
-        <h3>Stick Man Hide Seek</h3>
-        <p>Number puzzle brain game with engaging sorting mechanics and smooth UI.</p>
-        <p><strong>Platform:</strong> Android / Unity</p>
-        <div class="project-tags">
-            <span>Unity</span><span>Puzzle</span>
+
+        <div class="project-info">
+            <h3>Ball Sort Woody</h3>
+            <p>Ball Sort Woody is a relaxing yet challenging color-sorting puzzle game, featuring smooth interactions, satisfying SFX and VFX, and progressive tube unlocks that enhance the gameplay as you advance through each level.</p>
+
+            <p><strong>Platform:</strong> Android / Unity</p>
+
+            <div class="project-tags">
+                <span>Puzzle</span>
+            </div>
         </div>
     </div>
-    <div class="project">
-        <div class="preview-container">
-            <video autoplay loop muted playsinline poster="https://cdn.pixabay.com/photo/2017/09/04/18/51/fight-2710113_1280.jpg">
+    
+    <div class="project landscape">
+        <div class="preview-container landscape-video">
+            <video autoplay loop muted playsinline>
                 <source src="assets/videos/Going_Rolling_Ball.mp4" type="video/mp4">
             </video>
         </div>
-        <h3>Going Rolling Ball</h3>
-        <p>Number puzzle brain game with engaging sorting mechanics and smooth UI.</p>
-        <p><strong>Platform:</strong> Android / Unity</p>
-        <div class="project-tags">
-            <span>Unity</span><span>Puzzle</span>
+
+        <div class="project-info">
+            <h3>Going Rolling Ball</h3>
+            <p>Going Rolling Ball is a fast and engaging rolling adventure where you guide a ball through constantly changing tracks, overcoming challenging obstacles with smooth controls and a rewarding progression system that keeps every run exciting.</p>
+
+            <p><strong>Platform:</strong> Android / Unity</p>
+
+            <div class="project-tags">
+                <span>Casual</span>
+            </div>
         </div>
     </div>
+
+    <div class="project landscape">
+        <div class="preview-container landscape-video">
+            <video autoplay loop muted playsinline>
+                <source src="assets/videos/Stick_Man.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <div class="project-info">
+            <h3>Stickman Run Escape</h3>
+            <p>Stickman Run Escape is a fun hide-and-seek adventure where you outsmart monsters, blend into your surroundings, and navigate through playful 3D environments filled with surprises. Run, hide, transform into props, or become the seeker in this hilarious and addictive escape challenge.</p>
+
+            <p><strong>Platform:</strong> Android / Unity</p>
+
+            <div class="project-tags">
+                <span>Casual</span>
+            </div>
+        </div>
+    </div>
+    
 </section>
 
 <section class="contact" id="contact">
